@@ -11,6 +11,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class BookListComponent implements OnInit {
 books: Book[] = [];
+selectedBook: Book | null = null; // selects a book when clicked for viewing details in a modal
+title: string = '';
+author: string = '';
 newBook: Book = {
   id: 0,
   title: '',
@@ -41,7 +44,16 @@ deleteBook(id: number) {
   this.bookService.deleteBook(id).subscribe(() => this.loadBooks());
 }
 
-updateBook(book: Book) {
-  this.bookService.updateBook(book).subscribe(() => this.loadBooks());
+submitUpdate() {
+  if (this.selectedBook) {
+    this.bookService.updateBook(this.selectedBook).subscribe(() => {
+      this.loadBooks();
+      this.selectedBook = null; // close modal after update
+    });
+  }
 }
+
+showModal(book: Book) { // shows the modal with book details
+  this.selectedBook = book;
+} 
 }

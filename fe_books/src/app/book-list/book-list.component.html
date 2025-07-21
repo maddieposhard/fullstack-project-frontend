@@ -1,17 +1,19 @@
 <h2>Books</h2>
 
+<div class="book-container">
 @for (book of books; track book.id) {
-  <div>
-    <input [(ngModel)]="book.title" />
-    <input [(ngModel)]="book.author" />
+  <div class="book-card">
+    <p class="title">{{ book.title }}</p>
+    <p class="author">{{ book.author }}</p>
     <label>
       <input type="checkbox" [(ngModel)]="book.read" />
       Read
     </label>
-    <button (click)="updateBook(book)">Update</button>
+    <button (click)="showModal(book)">Update</button>
     <button (click)="deleteBook(book.id)">Delete</button>
   </div>
 }
+</div>
 
 <h3>Add Book</h3>
 <input [(ngModel)]="newBook.title" placeholder="Title" />
@@ -21,3 +23,30 @@
     Read
 </label>
 <button (click)="addBook()">Add</button>
+
+@if (selectedBook) {
+    <div class="modal-backdrop">
+      <div class="modal">
+        <form>
+          <input
+            type="text"
+            name="title"
+            required
+            [(ngModel)]="selectedBook.title"
+            placeholder="Title"
+            ngModel
+          />
+          <input
+            type="text"
+            name="author"
+            required
+            [(ngModel)]="selectedBook.author"
+            placeholder="Author"
+            ngModel
+          />
+        </form>
+        <button class="submit-btn" (click)="submitUpdate()">Submit</button>
+        <button (click)="selectedBook = null">Close</button>
+      </div>
+    </div>
+  }

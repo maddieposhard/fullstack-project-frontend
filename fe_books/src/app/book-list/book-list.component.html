@@ -1,0 +1,23 @@
+<h2>Books</h2>
+
+@for (book of books; track book.id) {
+  <div>
+    <input [(ngModel)]="book.title" />
+    <input [(ngModel)]="book.author" />
+    <label>
+      <input type="checkbox" [(ngModel)]="book.read" />
+      Read
+    </label>
+    <button (click)="updateBook(book)">Update</button>
+    <button (click)="deleteBook(book.id)">Delete</button>
+  </div>
+}
+
+<h3>Add Book</h3>
+<input [(ngModel)]="newBook.title" placeholder="Title" />
+<input [(ngModel)]="newBook.author" placeholder="Author" />
+<label>
+    <input type="checkbox" [(ngModel)]="newBook.read" />
+    Read
+</label>
+<button (click)="addBook()">Add</button>

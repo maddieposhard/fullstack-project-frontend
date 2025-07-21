@@ -1,0 +1,128 @@
+/* Container */
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Book Card */
+  .book-card {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 220px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-card .title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .book-card .author {
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Buttons inside card */
+  .book-card button {
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #1976d2;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .book-card button:hover {
+    background-color: #125a9c;
+  }
+  
+  /* Add Book Inputs */
+  input[type="text"] {
+    padding: 0.5rem;
+    margin: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #388e3c;
+  }
+  
+  /* Modal Backdrop */
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  /* Modal Box */
+  .modal {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 300px;
+  }
+  
+  /* Modal Form */
+  .modal .form input {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  /* Modal Buttons */
+  .modal .submit-btn {
+    background-color: #2196f3;
+    margin-right: 0.5rem;
+  }
+  
+  .modal button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .modal .submit-btn:hover {
+    background-color: #1976d2;
+  }
+  
+  .modal button:last-child {
+    background-color: #f44336;
+  }
+  
+  .modal button:last-child:hover {
+    background-color: #c62828;
+  }
+  

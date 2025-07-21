@@ -16,8 +16,8 @@
 </div>
 
 <h3>Add Book</h3>
-<input [(ngModel)]="newBook.title" placeholder="Title" />
-<input [(ngModel)]="newBook.author" placeholder="Author" />
+    <input [(ngModel)]="newBook.title" placeholder="Title" />
+    <input [(ngModel)]="newBook.author" placeholder="Author" />
 <label>
     <input type="checkbox" [(ngModel)]="newBook.read" />
     Read
@@ -27,23 +27,13 @@
 @if (selectedBook) {
     <div class="modal-backdrop">
       <div class="modal">
-        <form>
-          <input
-            type="text"
-            name="title"
-            required
-            [(ngModel)]="selectedBook.title"
-            placeholder="Title"
-            ngModel
-          />
-          <input
-            type="text"
-            name="author"
-            required
-            [(ngModel)]="selectedBook.author"
-            placeholder="Author"
-            ngModel
-          />
+        <form class="form">
+          <input type="text" name="title" required [(ngModel)]="selectedBook.title" placeholder="Title" ngModel/>
+          <input type="text" name="author" required [(ngModel)]="selectedBook.author" placeholder="Author" ngModel/>
+          <label>
+            <input type="checkbox" name="read" [(ngModel)]="selectedBook.read" ngModel/>
+            Read
+          </label>
         </form>
         <button class="submit-btn" (click)="submitUpdate()">Submit</button>
         <button (click)="selectedBook = null">Close</button>

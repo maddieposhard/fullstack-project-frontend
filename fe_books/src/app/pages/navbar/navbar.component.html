@@ -4,6 +4,7 @@
 	</div>
 	<div class="nav-links">
 		@if (authService.isLoggedIn()){
+        <a routerLink="/books/new">Add Book</a>
 		<button (click)="logout()">Logout</button>
 		}@else {
 		<a routerLink="/login">Login</a>

@@ -15,14 +15,7 @@
 }
 </div>
 
-<h3>Add Book</h3>
-    <input [(ngModel)]="newBook.title" placeholder="Title" />
-    <input [(ngModel)]="newBook.author" placeholder="Author" />
-<label>
-    <input type="checkbox" [(ngModel)]="newBook.read" />
-    Read
-</label>
-<button (click)="addBook()">Add</button>
+
 
 @if (selectedBook) {
     <div class="modal-backdrop">

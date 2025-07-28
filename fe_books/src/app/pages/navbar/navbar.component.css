@@ -1,17 +1,21 @@
 .stellar-navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: #007bff; /* Primary color for the navbar */
-	color: white;
-	padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #f48fb1, #ce93d8);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
 }
 
 .stellar-navbar .brand-name a {
-	font-size: 1.5rem;
-	font-weight: bold;
-	color: white; /* Keeps the brand name white */
-	text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fce4ec;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 .stellar-navbar .nav-links {
@@ -22,32 +26,22 @@
 
 .stellar-navbar .nav-links a,
 .stellar-navbar .nav-links button {
-	background: none;
-	border: 1px solid white; /* Border makes it stand out */
-	border-radius: 4px;
-	color: white;
-	padding: 0.5rem 1rem;
-	text-decoration: none;
-	font-size: 1rem;
-	cursor: pointer;
-	transition: background-color 0.3s, color 0.3s;
+    background-color: #ffffff33;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .stellar-navbar .nav-links a:hover,
 .stellar-navbar .nav-links button:hover {
-	background-color: white;
-	color: #007bff; /* Inverse the color scheme on hover */
+    background-color: white;
+    color: #ab47bc;
+    transform: scale(1.05);
 }
 
-/* Specific style for the logout button to differentiate it, if needed */
-.stellar-navbar .nav-links button {
-	background-color: transparent;
-	color: white;
-	border-color: white;
-}
-
-.stellar-navbar .nav-links button:hover {
-	color: #007bff;
-	background-color: white;
-	border-color: #007bff;
-}

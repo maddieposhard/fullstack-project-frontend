@@ -22,5 +22,10 @@ export const routes: Routes = [
     path: 'books/new',
     loadComponent: () => import('./pages/book-new/book-new.component').then(m => m.BookNewComponent),
     canActivate: [authGuard]
+  },
+  {
+    path: 'signup',
+    loadComponent: () => import('./features/auth/signup/signup.component').then(m => m.SignupComponent),
+    canActivate: [noAuthGuard]
   }
 ];

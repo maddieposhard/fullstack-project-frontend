@@ -25,11 +25,13 @@ export class BookListComponent implements OnInit {
   constructor(private bookService: BookService) {}
 
   ngOnInit() {
-    this.loadBooks();
+    this.bookService.getMyBooks().subscribe(books => {
+      this.books = books;
+    })
   }
 
   loadBooks() {
-    this.bookService.getBooks().subscribe((data) => (this.books = data));
+    this.bookService.getMyBooks().subscribe((data) => (this.books = data));
   }
 
   addBook() {

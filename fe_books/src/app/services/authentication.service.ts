@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {  Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
@@ -33,5 +33,9 @@ export class AuthenticationService {
     this.tokenSubject.next(null);
     this.router.navigate(['/login']);
   }
-  
+
+  signup(user: any) {
+    return this.http.post('http://localhost:3000/users', user);
+  }
+
 }

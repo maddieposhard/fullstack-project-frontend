@@ -1,14 +1,13 @@
-<h2>Books</h2>
+<h2 class="header">Books</h2>
 
 <div class="book-container">
 @for (book of books; track book.id) {
   <div class="book-card">
     <p class="title">{{ book.title }}</p>
-    <p class="author">{{ book.author }}</p>
-    <label>
-      <input type="checkbox" [(ngModel)]="book.read" />
-      Read
-    </label>
+    <p class="author">by {{ book.author }}</p>
+    <p class="read-status">
+      {{ book.read ? '✅ Already read' : '📖 To be read' }}
+    </p>
     <button (click)="showModal(book)">Update</button>
     <button (click)="deleteBook(book.id)">Delete</button>
   </div>

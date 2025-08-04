@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class BookService {
-  private apiUrl = 'http://localhost:3000/books';
+  private apiUrl = 'https://booksappmaddie.onrender.com';
 
   constructor(private http: HttpClient) { }
 

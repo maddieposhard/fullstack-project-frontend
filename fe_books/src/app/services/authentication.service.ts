@@ -35,7 +35,7 @@ export class AuthenticationService {
   }
 
   signup(user: any) {
-    return this.http.post('http://localhost:3000/users', user);
+    return this.http.post('https://booksappmaddie.onrender.com', user);
   }
 
 }

@@ -20,6 +20,7 @@ export class BookListComponent implements OnInit {
     title: '',
     author: '',
     read: false,
+    cover_image_url: '',
   };
 
   constructor(private bookService: BookService) {}
@@ -38,7 +39,7 @@ export class BookListComponent implements OnInit {
     if (!this.newBook.title || !this.newBook.author) return;
     const { title, author, read } = this.newBook;
     this.bookService.createBook({ title, author, read }).subscribe(() => {
-      this.newBook = { id: 0, title: '', author: '', read: false };
+      this.newBook = { id: 0, title: '', author: '', read: false , cover_image_url: '' }; // reset form
       this.loadBooks();
     });
   }

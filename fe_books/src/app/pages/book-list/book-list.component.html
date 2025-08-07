@@ -8,6 +8,11 @@
     <p class="read-status">
       {{ book.read ? '✅ Already read' : '📖 To be read' }}
     </p>
+    <img
+    [src]="book.cover_image_url || 'https://demo.publishr.cloud/assets/common/images/edition_placeholder.png'"
+    alt="book image"
+    class="book-image"
+  />
     <button (click)="showModal(book)">Update</button>
     <button (click)="deleteBook(book.id)">Delete</button>
   </div>

@@ -21,7 +21,7 @@ export class BookService {
   }
 
   createBook(book: Partial<Book>): Observable<Book> {
-    return this.http.post<Book>(this.apiUrl, { book });
+    return this.http.post<Book>('https://booksappmaddie.onrender.com/books', { book });
   }
 
   updateBook(book: Book) {

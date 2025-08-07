@@ -36,7 +36,7 @@ export class BookNewComponent {
       formData.append('read', this.bookForm.get('read')!.value!.toString());
       formData.append('cover_image', this.selectedFile, this.selectedFile.name);
 
-    this.bookService.createBook(this.bookForm.value).subscribe({
+    this.bookService.createBook(formData).subscribe({
       next: (book: Book) => {
         console.log('Book created:', book);
         this.router.navigate(['/books']);

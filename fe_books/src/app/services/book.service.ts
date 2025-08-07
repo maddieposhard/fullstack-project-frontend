@@ -20,7 +20,7 @@ export class BookService {
     return this.http.get<Book>(`${this.apiUrl}/${id}`);
   }
 
-  createBook(book: Partial<Book>): Observable<Book> {
+  createBook(book: Partial<Book> | FormData): Observable<Book> {
     return this.http.post<Book>('https://booksappmaddie.onrender.com/books', { book });
   }
 
